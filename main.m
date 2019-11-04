@@ -7,3 +7,6 @@ syms t
 
 %Testing the push 2
 syms s
+
+%Testing the push 3
+syms v
