@@ -4,3 +4,6 @@
 
 %Testing the push
 syms t
+
+%Testing the push 2
+syms s
