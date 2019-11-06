@@ -3,6 +3,7 @@
     
 % percentage of eggs eaten if wasp egg is present: 95%
 
+
 %% Lotka-Volterra Equations
 
 % x = prep population
@@ -13,10 +14,10 @@
 
 %% Parameter Meanings
 
-% alpha is the reproductive rate of the prey (butterfly)
+% alpha is the overall reproductive rate of the prey (butterfly)
     % Rate is 20-50 eggs/leaf or 20-50 eggs per butterfly
     % we can use random variable distribution to model alpha
-    % this factor is independent of pheromone concentration
+    % this factor is dependent on pheromone concentration
    
     % if egg batch is not parisitized:  alpha = [20, 50]
     % if egg batch is parisitized:      alpha = 0.05*[20, 50]

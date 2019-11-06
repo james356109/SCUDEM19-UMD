@@ -3,6 +3,7 @@
     
 % percentage of eggs eaten if wasp egg is present: 95%
 
+
 %% Lotka-Volterra Equations
 
 % x = prep population
@@ -13,10 +14,10 @@
 
 %% Parameter Meanings
 
-% alpha is the reproductive rate of the prey (butterfly)
+% alpha is the overall reproductive rate of the prey (butterfly)
     % Rate is 20-50 eggs/leaf or 20-50 eggs per butterfly
     % we can use random variable distribution to model alpha
-    % this factor is independent of pheromone concentration
+    % this factor is dependent on pheromone concentration
    
     % if egg batch is not parisitized:  alpha = [20, 50]
     % if egg batch is parisitized:      alpha = 0.05*[20, 50]
@@ -69,6 +70,7 @@
 
 %* 7. females have a refractory time after egg laying where they cannot get
     % pregnant again (find in paper?)
+    % see 10
 
 % 8. predator and prey death rate is inversely proportional to lifespan?
     % prey: 30-60 days total (larvae stage is ~20 days)
@@ -76,6 +78,7 @@
         % https://greenmethods.com/trichogramma/
         % include in agent-based model
         
-% 10. females are monogamous? How many times can they mate?
+% 10. How many times can they mate?
     % How long for female to lay one brood of eggs? James will find
-    % example: 
+    % Butterflies: 6 days to lay eggs, mate every 4 days
+    % Add to model later down the line
