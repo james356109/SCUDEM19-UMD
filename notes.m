@@ -27,15 +27,12 @@
         % pheromone concentration (fluctuates)
         % pheromone
         % current population of female butterflies
-        % if predator and prey meet, female survives but reproductive rate
-        % becomes 0
 
 % delta is the growth rate of the predator population
     % this is directly proportional to the reproductive rate of the prey
     % we can assume a 0% mortality rate for now (all predator eggs survive
         % to reach adulthood)
-    % dependent on:
-        % beta
+    % delta = beta
 
 % gamma is the loss rate of predators due to either natural death or
 % emigration
@@ -58,6 +55,8 @@
         % this is a per leaf basis, not for entire population
         
 % 2a. 
+
+%   wasp can only reproduce by laying an egg on butterfly egg
 
 % 3. female and male butterflies are born at a 50:50 ratio
 
