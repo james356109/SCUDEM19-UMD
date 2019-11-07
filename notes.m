@@ -12,6 +12,12 @@
 % dx/dt = alpha*x   - beta*x*y
 % dy/dt = delta*x*y - gamma*y
 
+
+%% 1923 06Nov
+% Assumptions made:
+% 1. alpha and beta are both positively correlated to pheromone concentration
+% 2. concentration of pheromone is linear relation to B(t)
+
 %% Parameter Meanings
 
 % alpha is the overall reproductive rate of the prey (butterfly)
@@ -38,7 +44,7 @@
 % emigration
     % this should inversely proportional to predator lifespan (assume no
         % emmigration or other factors)
-    % gamma = (17 days)^(-1)
+    % gamma = (17 days)^(-1) geometric rate
     
 % pheromone concentration
     % female anti-aphrodesiac (MeSA/ARG) concentration is ~1ng/gland greater
@@ -57,6 +63,8 @@
 % 2a. 
 
 %   wasp can only reproduce by laying an egg on butterfly egg
+
+%   each female carries a constant amount of pheromone
 
 % 3. female and male butterflies are born at a 50:50 ratio
 
