@@ -21,7 +21,7 @@
 % dW/dt = a2 B(t) W(t) - d2 W(t)
 
 % Parameter values:
-p = 10^-2;            % pheromone
+p = 5*10^-3;            % pheromone
 a1 = 35/6.5*p;      % alpha
 d1 = p*.1;          % beta
 a2 = p*.1;          % delta
@@ -39,8 +39,8 @@ B = zeros(Nt,1);
 W = zeros(Nt,1);
 
 % Initial conditions
-B(1) = 500;
-W(1) = 100;
+B(1) = 100;
+W(1) = 10;
 V = a2*B(1)-d2*log(B(1))+d1*W(1)-a1*log(W(1))
 % Implement Euler's scheme
 for it = 2:Nt

@@ -1,3 +1,6 @@
+% Focus on male-female butterfly interaction after rest of model is
+% complete (Thursday night or later)
+
 % 1 female butterfly lays between 20-50 eggs on a leaf
     % use random variable
     
@@ -22,29 +25,25 @@
 
 % alpha is the overall reproductive rate of the prey (butterfly)
     % Rate is 20-50 eggs/leaf or 20-50 eggs per butterfly
-    % we can use random variable distribution to model alpha
-    % this factor is dependent on pheromone concentration
-   
-    % if egg batch is not parisitized:  alpha = [20, 50]
-    % if egg batch is parisitized:      alpha = 0.05*[20, 50]
+    % alpha is proportional to 
+    % 
 
 % beta is the the rate at which predators and prey meet (predation)
     % this is dependent on:
-        % pheromone concentration (fluctuates)
-        % pheromone
-        % current population of female butterflies
+        % pheromone concentration
+        % constant c
 
 % delta is the growth rate of the predator population
     % this is directly proportional to the reproductive rate of the prey
-    % we can assume a 0% mortality rate for now (all predator eggs survive
+    % we can assume a 0% mortality rate (all predator eggs survive
         % to reach adulthood)
     % delta = beta
 
 % gamma is the loss rate of predators due to either natural death or
 % emigration
-    % this should inversely proportional to predator lifespan (assume no
-        % emmigration or other factors)
-    % gamma = (17 days)^(-1) geometric rate
+    % probability that the bug dies on each day
+    % geometric distribution
+    % lifespan = 17 days
     
 % pheromone concentration
     % female anti-aphrodesiac (MeSA/ARG) concentration is ~1ng/gland greater
