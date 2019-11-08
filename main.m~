@@ -13,19 +13,18 @@
 % Parameters
 % a1 == reproductive rate : (eggs/time * pheromone)
 % d1 == rate at which predator and prey meet : (k * pheromone)
-% a2 == growth rate of predator population (porportional to d1)
-% d2 == loss due to natural death
+% a2 == growth rate of predator population (porportional to 
+% d2 ==
 
 % Equations:
 % dB/dt = a1 B(t) - d1 B(t) W(t)
-% dW/dt = a2 B(t) W(t) - d2 W(t)
+% dW/dt = a2
 
 % Parameter values:
-p = 1;
-a1 = 35/6.5*p;
-d1 = p*0.001;
-a2 = p*0.001;
-d2 = (16/17);
+a1 = 1.1-0.4;
+a2 = 0.1-0.4
+b = 0.0001;
+k = 1/100;
 
 % Time variable
 Tmax = 100;
@@ -34,26 +33,26 @@ time = (0:deltaT:Tmax);
 Nt = length(time);
 
 % Allocate space
-B = zeros(Nt,1);
-W = zeros(Nt,1);
+S = zeros(Nt,1);
+I = zeros(Nt,1);
 
 % Initial conditions
-B(1) = 200;
-W(1) = 10;
+S(1) = 10;
+I(1) = S(1);
 
 % Implement Euler's scheme
 for it = 2:Nt
     t = time(it);
     % First order update
-    B(it) = B(it-1) + (a1*B(it-1)- (d1*B(it-1)*W(it-1)))*deltaT;
-    W(it) = W(it-1) + (a2*B(it-1)*W(it-1) - d2 *W(it-1))*deltaT;
+    S(it) = S(it-1) + (a1*S(it-1)- (b*S(it-1)*I(it-1)))*deltaT;
+    I(it) = I(it-1) + (b*S(it-1)*I(it-1) +a2 *I(it-1))*deltaT;
 end
 
 
 % Visualize solution
-plot(time,B,'b',time,W,'r')
+plot(time,S,'b',time,I,'r')
 xlabel('time')
-legend('Butterfly','Wasp')
+legend('Prey','Predator')
 
 % Collect statistics
 % Max Infected time
