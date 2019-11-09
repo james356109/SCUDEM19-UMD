@@ -21,13 +21,12 @@
 % dW/dt = a2 B(t) W(t) - d2 W(t)
 
 % Parameter values:
-% p = 17*10^-3;            % pheromone
-p = 100;
+p = 0.02;            % pheromone
 a1 = 0.5*35/8*p;      % alpha
-d1 = p*.1*(6.5/(0.5*8)); % beta
-a2 = p*.1*(6.5/(0.5*8)); % delta
-d2 = (1/17);        % gamma, death rate of wasp
-c1 = (1/30);        % death rate of butterfly, change to 1/45
+d1 = p*.1; % beta
+a2 = p*.1; % delta
+d2 = 1/17;        % gamma, death rate of wasp
+c1 = 1/44.5;        % death rate of butterfly
 
 % Time variable
 Tmax = 1000;
