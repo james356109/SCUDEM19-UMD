@@ -21,10 +21,11 @@
 % dW/dt = a2 B(t) W(t) - d2 W(t)
 
 % Parameter values:
-p = 0.02;            % pheromone
+p = 0.01;            % pheromone
 a1 = 0.5*35/8*p;      % alpha
-d1 = p*.1; % beta
-a2 = p*.1; % delta
+t = 0.1;            % constant in d1 and a2
+d1 = p*t;           % beta
+a2 = p*t;           % delta
 d2 = 1/17;        % gamma, death rate of wasp
 c1 = 1/44.5;        % death rate of butterfly
 
@@ -47,8 +48,6 @@ for it = 2:Nt
     t = time(it);
     % First order update
     B(it) = B(it-1) + (a1*B(it-1)- (d1*B(it-1)*W(it-1)) - c1*B(it-1))*deltaT;
-    %B(it) = B(it-1) + (a1*B(it-1)- (d1*B(it-1)*W(it-1)))*deltaT;
-
     W(it) = W(it-1) + (a2*B(it-1)*W(it-1) - d2 *W(it-1))*deltaT;
 end
 
