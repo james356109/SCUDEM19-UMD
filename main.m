@@ -6,7 +6,7 @@
 %%%%%%%%%%%%%%%%%
 
 % Variables
-% B = Butterfly (t)
+% B = Butterfly (t
 % W = Wasp (t)
 
 
@@ -21,18 +21,18 @@
 % dW/dt = a2 B(t) W(t) - d2 W(t)
 
 % Parameter values:
-p = 20*10^-6;% pheromone
+p =  10^-6;% pheromone
 k1 = 10^4;
 a1 = 0.5*35/8*p*k1;      % alpha
-k2 = 7*10^3;            % constant in d1 and a2
+k2 = 5*10^2;            % constant in d1 and a2
 d1 = p*k2;           % beta
 a2 = p*k2;           % delta
 d2 = 1/17;           % gamma, death rate of wasp
 c1 = 1/44.5;        % death rate of butterfly
 
 % Time variable
-Tmax = 1000;
-deltaT = 0.0001;
+Tmax = 2000;
+deltaT = 0.01;
 time = (0:deltaT:Tmax);
 Nt = length(time);
 
@@ -42,14 +42,14 @@ W = zeros(Nt,1);
 
 % Initial conditions
 B(1) = 200;
-W(1) = 10;
+W(1) = 100;
 V = a2*B(1)-d2*log(B(1))+d1*W(1)-a1*log(W(1))
 % Implement Euler's scheme
 for it = 2:Nt
     t = time(it);
     % First order update
-    B(it) = B(it-1) + (a1*B(it-1)- (d1*B(it-1)*W(it-1)) - c1*B(it-1))*deltaT;
-    W(it) = W(it-1) + (a2*B(it-1)*W(it-1) - d2 *W(it-1))*deltaT;
+    B(it) = B(it-1) + (a1*cos(2*pi*(it-1))*B(it-1)- (d1*cos(2*pi*(it-1))*B(it-1)*W(it-1)) - c1*B(it-1))*deltaT;
+    W(it) = W(it-1) + (a2*cos(2*pi*(it-1))*B(it-1)*W(it-1) - d2 *W(it-1))*deltaT;
 end
 
 V2=a2*B(it)-d2*log(B(it))+d1*W(it)-a1*log(W(it))
